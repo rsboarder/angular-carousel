@@ -446,6 +446,12 @@
                             });
                         }
 
+                        if (iAttributes.rnCarouselResetOnUpdate !== undefined) {
+                          scope.$watchCollection(repeatCollection, function(){
+                            goToSlide(0);
+                          });
+                        }
+
                         if (isRepeatBased) {
                             // use rn-carousel-deep-watch to fight the Angular $watchCollection weakness : https://github.com/angular/angular.js/issues/2621
                             // optional because it have some performance impacts (deep watch)
